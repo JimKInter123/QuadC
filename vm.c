@@ -129,6 +129,8 @@ static bool callValue(Value callee, int argCount) {
                 }
                 return true;
             }
+            case OBJ_CLOSURE: 
+                return call(AS_CLOSURE(callee), argCount);
             case OBJ_FUNCTION:
                 return call(AS_CLOSURE(callee),  argCount);
             /*
